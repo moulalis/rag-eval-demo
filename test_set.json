@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "question": "How much does my first checked bag cost?",
+    "reference_answer": "The first checked bag costs $35 on domestic flights.",
+    "source": "baggage.md"
+  },
+  {
+    "id": 2,
+    "question": "Can I get a bereavement discount after I travel?",
+    "reference_answer": "No. Cloudhopper does not offer bereavement fares, and discounts cannot be applied after travel.",
+    "source": "bereavement.md"
+  },
+  {
+    "id": 3,
+    "question": "Is Wi-Fi free on Cloudhopper flights?",
+    "reference_answer": "The policies do not cover Wi-Fi, so the assistant should say it doesn't know.",
+    "source": null
+  }
+]

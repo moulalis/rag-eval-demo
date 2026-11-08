@@ -1,0 +1,21 @@
+# Runs the RAG exam on every pull request and blocks the merge if scores drop.
+name: RAG evaluation
+
+on:
+  pull_request:
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run the exam
+        env:
+          LLM_PROVIDER: anthropic   # or openai; add the API key as a repository secret
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python evaluate.py --prompt v2
+      - name: Quality gate
+        run: python quality_gate.py
